@@ -37,10 +37,9 @@ async function getWeather() {
         alert("Wpisz nazwę miasta");
         return;
     }
-    const apiKey = "21d83297b909ae41d975a375fc1e9f96";
-
+    const geoApiKey = "21d83297b909ae41d975a375fc1e9f96";
     const url =
-        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=pl`;
+        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${geoApiKey}&units=metric&lang=pl`;
 
     const loading = document.getElementById("loading");
     loading.style.display = "block";
@@ -91,7 +90,7 @@ async function getWeather() {
     }
 }
 
-const geoApiKey = "21d83297b909ae41d975a375fc1e9f96";
+
 async function getForecast(city) {
 
     const url =
