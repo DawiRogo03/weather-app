@@ -94,7 +94,7 @@ async function getWeather() {
 async function getForecast(city) {
 
     const url =
-        `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${geoApiKey}&units=metric&lang=pl`;
+        `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=metric&lang=pl`;
 
     const res = await fetch(url);
     const data = await res.json();
@@ -124,7 +124,7 @@ async function getCities(query) {
     if (!query) return;
 
     const url =
-        `https://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=5&appid=${geoApiKey}`;
+        `https://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=5&appid=${API_KEY}`;
 
     const res = await fetch(url);
     const data = await res.json();
@@ -164,5 +164,4 @@ document.getElementById("cityInput").addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
         getWeather();
     }
-
 });
