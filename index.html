@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikacja pogodowa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>🌤️ Aplikacja pogodowa</h1>
+
+        <input type="text" id="cityInput" placeholder="Wpisz nazwę miasta">
+        <div id="suggestions"></div>
+        <button id="searchBtn">
+            Sprawdź pogodę
+        </button>
+
+        <div id="weatherInfo">
+            <p id="loading" style="display:none;">Ładowanie...</p>
+            <div id="weatherIcon" style="font-size: 50px;">🌤️</div>
+
+
+            <h2 id="cityName">Miasto</h2>
+            <p id="temperature">Temperatura: --°C</p>
+            <p id="humidity">Wilgotność: --%</p>
+            <p id="description">Opis pogody: ---</p>
+            <div id="forecast"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
