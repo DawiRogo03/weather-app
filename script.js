@@ -1,4 +1,5 @@
 const button = document.getElementById("searchBtn");
+const API_KEY = "21d83297b909ae41d975a375fc1e9f96";
 window.addEventListener("load", () => {
     const savedCity = localStorage.getItem("lastCity");
 
@@ -37,9 +38,8 @@ async function getWeather() {
         alert("Wpisz nazwę miasta");
         return;
     }
-    const geoApiKey = "21d83297b909ae41d975a375fc1e9f96";
     const url =
-        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${geoApiKey}&units=metric&lang=pl`;
+        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric&lang=pl`;
 
     const loading = document.getElementById("loading");
     loading.style.display = "block";
@@ -156,9 +156,13 @@ document.getElementById("cityInput").addEventListener("input", (e) => {
     timeout = setTimeout(() => {
         getCities(e.target.value);
     }, 500);
+
+});
+
 document.getElementById("cityInput").addEventListener("keydown", (e) => {
-        if (e.key === "Enter") {
-            getWeather();
-        }
-    });
+
+    if (e.key === "Enter") {
+        getWeather();
+    }
+
 });
